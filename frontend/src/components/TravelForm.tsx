@@ -1,36 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import React, { FC, useState } from 'react';
 // import { Box, Typography } from '@mui/material';
 import Flights from './Flights';
 import Hotels from './Hotels';
 import Cars from './Cars';
-import Insurance from './Insurance';
-import Travel from './Travel';
-import Visa from './Visa';
-import Button from './shared/Button'
 
 
-// import { Flight, DriveEta as InsuranceIcon, FlightTakeoff } from '@mui/icons-material';
-// import { BeachAccess } from '@mui/icons-material';
-// import { Payment } from '@mui/icons-material';
-// import { DirectionsCar } from '@mui/icons-material';
-// import { Hotel } from '@mui/icons-material';
-// import { LocalHospital } from '@mui/icons-material';
-
-import {Link} from 'react-router-dom';
-// commented now
-// import Video from './Video';
-// import ReactPlayer from 'react-player'
-
-const FlightForm :FC<{data?:any}>= ({data}) => {
+const TravelForm :FC<{data?:any}>= ({data}) => {
   // dashboard state management
   const [showFlights, setShowFlights] = useState(true);
   const [showHotels, setShowHotels] = useState(false);
   const [showCars, setShowCars] = useState(false);
-  const [showInsurance, setShowInsurance] = useState(false);
-  const [showTravel, setShowTravel] = useState(false);
-  const [showVisa, setShowVisa] = useState(false);
+  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const[listingpath, setListingpath] = useState('');
 
 
@@ -40,9 +23,7 @@ const FlightForm :FC<{data?:any}>= ({data}) => {
     setShowFlights(true);
     setShowHotels(false);
     setShowCars(false);
-    setShowInsurance(false);
-    setShowTravel(false);
-    setShowVisa(false);
+ 
   };
 
   const handleClickHotels = () => {
@@ -50,9 +31,7 @@ const FlightForm :FC<{data?:any}>= ({data}) => {
     setShowFlights(false);
     setShowHotels(true);
     setShowCars(false);
-    setShowInsurance(false);
-    setShowTravel(false);
-    setShowVisa(false);
+  
   };
 
   const handleClickCars = () => {
@@ -60,48 +39,18 @@ const FlightForm :FC<{data?:any}>= ({data}) => {
     setShowFlights(false);
     setShowHotels(false);
     setShowCars(true);
-    setShowInsurance(false);
-    setShowTravel(false);
-    setShowVisa(false);
+
   };
 
-  const handleClickInsurance = () => {
-    setListingpath('/insurancelisting')
-    setShowFlights(false);
-    setShowHotels(false);
-    setShowCars(false);
-    setShowInsurance(true);
-    setShowTravel(false);
-    setShowVisa(false);
-  };
+  
 
-  const handleClickTravel = () => {
-    setListingpath('/travellisting')
-    setShowFlights(false);
-    setShowHotels(false);
-    setShowCars(false);
-    setShowInsurance(false);
-    setShowTravel(true);
-    setShowVisa(false);
-  };
+ 
 
-  const handleClickVisa = () => {
-    setListingpath('/visalisting')
-    setShowFlights(false);
-    setShowHotels(false);
-    setShowCars(false);
-    setShowInsurance(false);
-    setShowTravel(false);
-    setShowVisa(true);
-  };
+ 
 
   
   return (
     <div>
-      {/* commented now */}
-    {/* <Video /> */}
-    
-
 
     <div  className='border border-gray-300 rounded-lg p-2   shadow-2xl shadow-zinc-950  bg-zinc
  md:mx-[50px]  lg:mx-[100px]  xl:mx-[160px]   bg-secondarycolor opacity-90'>
@@ -169,4 +118,4 @@ const FlightForm :FC<{data?:any}>= ({data}) => {
   );
 };
 
-export default FlightForm;
+export default TravelForm;

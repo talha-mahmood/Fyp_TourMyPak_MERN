@@ -1,6 +1,6 @@
 import React from "react";
 // import Header from "../components/layout/Header";
-import FlightForm from "./FlightForm";
+import TravelForm from "./TravelForm";
 import FallIntoTravel from "./FallIntoTravel";
 // import MyFooter from "./MyFooter";
 import mainimage from '../../public/main5.jpg'
@@ -17,7 +17,7 @@ function Home() {
          </div>
      
       <div className=" absolute top-[200px] ">
-        <FlightForm />
+        <TravelForm />
       </div>
  
       </div>
