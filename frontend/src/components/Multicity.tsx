@@ -494,6 +494,7 @@ fetchData();
 console.log("flights", flights)
   return (
     <div className=''>
+
       <div className='relative  p-1'>
       {/*  travelers dropdown */}
  
@@ -526,8 +527,8 @@ console.log("flights", flights)
       
           <div className='mb-2' key={index}>
             
-            <div className="flex flex-row custom-screen  mr-3 space-y-2 space-x-2  w-full " >
-              <button className="pb-1 md:pr-1 font-bold left-0 min-w-[30px] text-start text-white">{`T${index + 1}`}</button>
+            <div className="flex flex-row custom-screen  mr-3 space-y-2  space-x-2  w-full  " >
+              <button className="pb-1 md:pr-1 pt-3 font-bold left-0 min-w-[30px] text-start text-white">{`T${index + 1}`}</button>
               
               <div className="max-h-[50px]    ">
           <AutoComplete
@@ -725,7 +726,7 @@ console.log("flights", flights)
         {flights.length < 5 && (
           <button
             type="submit"
-            className="text-secondarycolor px-1 py-1 mb-1 rounded-md text-lg font-medium hover: hover:scale-105 duration-300"
+            className="text-secondarycolor px-1 pt-3 pb-1 mb-1 rounded-md text-lg font-medium hover: hover:scale-105 duration-300"
             onClick={()=>{handleAddFlight(addFlightClickCount + 2)}}
 
           >

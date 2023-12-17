@@ -4,7 +4,7 @@
 // import {Navigate} from "react-router-dom";
 
 
-export default function BookingWidget({place}:any) {
+export default function BookingWidget() {
   // const [checkIn,setCheckIn] = useState('');
   // const [checkOut,setCheckOut] = useState('');
   // const [numberOfGuests,setNumberOfGuests] = useState(1);
@@ -28,7 +28,7 @@ export default function BookingWidget({place}:any) {
     <div className="bg-white shadow p-4 rounded-2xl">
       <div className="text-2xl text-center">
         {/* Price: ${place.price} / per night */}
-        Price: PKR10,000 / per night
+        Price: PKR10,000
       </div>
       {/* <div className="border rounded-2xl mt-4">
         <div className="flex">
@@ -64,7 +64,7 @@ export default function BookingWidget({place}:any) {
         )}
       </div> */}
       <button className="primary mt-4">
-        Book this place
+        Book 
         {/* {numberOfNights > 0 && (
           <span>
              ${numberOfNights * place.price}

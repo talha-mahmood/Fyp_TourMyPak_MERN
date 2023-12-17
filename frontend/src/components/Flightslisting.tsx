@@ -3,11 +3,17 @@ import React, { useState } from "react";
 import "./SearchPage.css";
 import SearchResult from "./SearchResult";
 import skardu from '/skardu.jpg'
+import {useNavigate} from'react-router-dom'
 function SearchPage() {
   const[recommended, setRecommended]=useState<boolean>(true)
   const[highRated, setHighRated]=useState<boolean>(false)
   const[lowPrice, setLowPrice]=useState<boolean>(false)
 
+  const navigate=useNavigate()
+
+  const handleClick=()=>{
+    navigate(`/tourpackagebooking`)
+  }
   const handleClickRecommended=() => {
     setRecommended(true)
     setHighRated(false)
@@ -33,6 +39,7 @@ function SearchPage() {
         <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${lowPrice? 'bg-primarycolor' : 'bg-secondarycolor'}`}onClick={handleClickLowPrice}>Low Price</button>
 
       </div>
+      <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -42,6 +49,9 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
+     <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -51,6 +61,9 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
+     <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -60,6 +73,9 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
+     <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -69,6 +85,9 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
+     <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -78,6 +97,9 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
+     <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -87,6 +109,9 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
+     <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -96,6 +121,8 @@ function SearchPage() {
         price="PKR 10,000 per person"
         total=""
       />
+     
+      </div>
      
     </div>
   );

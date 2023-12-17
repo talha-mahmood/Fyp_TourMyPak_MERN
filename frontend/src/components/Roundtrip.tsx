@@ -34,10 +34,9 @@ const RoundTrip : FC<{data?:any }> = ({data})  => {
 
 
   const {startDate, setStartDate}:any = Context()
-  const fourDaysLater = new Date();
-  fourDaysLater.setDate(startDate.getDate() + 4);
 
-  const [endDate, setEndDate] = useState<Date|any>(fourDaysLater);
+  const {endDate, setEndDate}:any = Context()
+
 
   const [datePickerOpen, setDatePickerOpen] = useState(false);
   const [datePickerOpen2, setDatePickerOpen2] = useState(false);

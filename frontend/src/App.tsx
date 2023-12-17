@@ -24,6 +24,8 @@ import AddPlaces from "./components/AddPlaces";
 import Register from "./components/Register";
 
 import HotelsBooking from "./components/HotelsBooking";
+import TourPackageBooking from "./components/TourPackageBooking";
+import CarsBooking from "./components/CarsBooking";
 
 function App() {
   return (
@@ -109,13 +111,13 @@ function App() {
           ></Route>
           <Route
 
-            path="/hotelsbooking"
-            element={<HotelsBooking />}
+            path="/tourpackagebooking"
+            element={<TourPackageBooking />}
           ></Route>
           <Route
 
-            path="/hotelsbooking"
-            element={<HotelsBooking />}
+            path="/carsbooking"
+            element={<CarsBooking />}
           ></Route>
         
         </Routes>

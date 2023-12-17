@@ -26,10 +26,10 @@ function Home() {
       <FallIntoTravel
       heading={"Top Tour Packages"}
       details={"Book Tour"}
-      description1={" Islamabad-Chitral"}
-      description2={"Islamabad-Skardu"}
-      description3={"Islamabad-kaghan"}
-      description4={"Islamabad-Pirchinasi"}
+      description1={" Isb-Chitral"}
+      description2={"Isb-Skardu"}
+      description3={"Isb-kaghan"}
+      description4={"Isb-Pirchinasi"}
       i1={'/public/chitral.jpg'}
       i2={'/public/skardu.jpg'}
       i3={'/public/swat.jpg'}

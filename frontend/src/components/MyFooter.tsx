@@ -7,9 +7,9 @@ import twitter from "/public/twitter.svg";
 import youtube from "/public/youtube.svg";
 const MyFooter = () => {
   return (
-    <div className="bg-secondarycolor w-full ">
+    <div className="bg-secondarycolor w-fit md:w-full ">
     <div className="mt-[240px] md:mx-[70px]">
-      <div className=" relative rounded-[20px] bg-primarycolor  min-w-[400px] -top-[160px] w-full  ">
+      <div className=" relative rounded-[20px] bg-primarycolor  min-w-[400px] -top-[160px]   ">
         <div className="md:ml-[24px] flex flex-row justify-between">
           <div>
             <p className="relative w-[364px] text-[44px] leading-[54px] font-bold top-5 text-white  ">
@@ -45,7 +45,7 @@ const MyFooter = () => {
     </div>
 
         <div className=" relative grid md:grid-cols-6 grid-cols-3 -top-12  ">
-        <div className="flex flex-col space-y-7">
+        <div className="flex flex-col space-y-7 ">
           <div className="flex items-center gap-1">
         
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 -rotate-90 hidden md:visible">

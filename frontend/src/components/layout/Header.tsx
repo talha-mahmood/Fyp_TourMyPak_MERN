@@ -40,10 +40,11 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8 font-semibold my-6 ">
             <div className='flex mr-8 -mt-1'>
               {/* <img src={profileicon} alt='profileicon' className='h-[45px] w-[45px] rounded-full'/> */}
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6b3729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle cx="12" cy="12" r="10" /></svg>
-              <p className='mt-2 ml-1'>Talha</p>
+              {/* <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6b3729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle cx="12" cy="12" r="10" /></svg>
+              <p className='mt-2 ml-1'>Talha</p> */}
             </div>
-            {localStorage.getItem('user') ? <><Link to="/" className='mt-1'>
+            {localStorage.getItem('user') ? <>
+            {/* <Link to="/" className='mt-1'>
               About Us
             </Link>
               <Link to="/" className='mt-1'>
@@ -57,13 +58,23 @@ const Header = () => {
               </Link>
               <Link to='/image-upload'className='mt-1' >
                 Image Upload
-              </Link>
-              <Link to="/signup"className='mt-1' onClick={() => logout()}>Logout {"( " +user ? user.name : '' + " )"}</Link>
-            </> : <><Link to='/login'className='mt-1' >
-              Login
+              </Link> */}
+              <Link to="/signup"className='mt-1 flex' onClick={() => logout()}>
+            
+
+               <span> Logout  </span></Link>
+               <Link to='/' className='flex'>
+               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6b3729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle cx="12" cy="12" r="10" /></svg>
+
+               <span className='mt-1'>  {"( " +user ? user.name : '' + " )"} </span>
+               </Link>
+            </> : <><Link to='/login'className='mt-1 ' >
+
+            <span className='mt-1'> Login</span>
             </Link>
-              <Link to='/signup'className='mt-1' >
-                Signup
+              <Link to='/signup'className='mt-1 ' >
+
+              <span className='mt-1'> Signup</span>
               </Link></>}
 
 
@@ -92,7 +103,8 @@ const Header = () => {
             </div>
            
 
-            {localStorage.getItem('user') ? <><Link to="/" className="block px-4 py-2  hover:bg-secondarycolor rounded-md hover:text-white text-gray-800">
+            {localStorage.getItem('user') ? <>
+            {/* <Link to="/" className="block px-4 py-2  hover:bg-secondarycolor rounded-md hover:text-white text-gray-800">
               About Us
             </Link>
               <Link to="/" className="block px-4 py-2  hover:bg-secondarycolor rounded-md hover:text-white text-gray-800">
@@ -106,7 +118,7 @@ const Header = () => {
               </Link>
               <Link to='/image-upload'className="block px-4 py-2  hover:bg-secondarycolor rounded-md hover:text-white text-gray-800" >
                 Image Upload
-              </Link>
+              </Link> */}
               <Link to="/signup"className="block px-4 py-2  hover:bg-secondarycolor rounded-md hover:text-white text-gray-800" onClick={() => logout()}>Logout {"( " + user ? user.name : '' + " )"}</Link>
             </> : <><Link to='/login'className="block px-4 py-2  hover:bg-secondarycolor rounded-md hover:text-white text-gray-800" >
               Login

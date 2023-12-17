@@ -4,10 +4,17 @@ import React, { useState } from "react";
 import "./SearchPage.css";
 import SearchResult from "./SearchResult";
 import civic from '../../public/civic.jpg'
+import { useNavigate } from "react-router-dom";
 function Carslisting() {
   const[recommended, setRecommended]=useState<boolean>(true)
   const[highRated, setHighRated]=useState<boolean>(false)
   const[lowPrice, setLowPrice]=useState<boolean>(false)
+
+  const navigate=useNavigate()
+
+  const handleClick=()=>{
+    navigate(`/carsbooking`)
+  }
 
   const handleClickRecommended=() => {
     setRecommended(true)
@@ -34,6 +41,7 @@ function Carslisting() {
    <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${lowPrice? 'bg-primarycolor' : 'bg-secondarycolor'}`}onClick={handleClickLowPrice}>Low Price</button>
 
  </div>
+ <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -43,6 +51,8 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
+   <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -52,6 +62,8 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
+   <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -61,6 +73,8 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
+   <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -70,6 +84,8 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
+   <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -79,6 +95,8 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
+   <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -88,6 +106,8 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
+   <div onClick={handleClick}>
       <SearchResult
         img={civic}
         location="Islamabad"
@@ -97,6 +117,7 @@ function Carslisting() {
         price="PKR5000 / day"
         total=""
       />
+      </div>
     
     </div>
   );

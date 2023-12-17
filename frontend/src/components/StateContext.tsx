@@ -7,9 +7,13 @@ interface ContextProps {
 }
 
 export default function StateContext({ children }:ContextProps) {
-  const today = new Date();
+  const today = new Date() ;
+
   const [statecontext, setstatecontext] = useState<boolean>(false);
   const [startDate, setStartDate] = useState<any>(today);
+  const fourDaysLater = new Date();
+  fourDaysLater.setDate(today.getDate() + 4);
+  const [endDate, setEndDate] = useState<any>(fourDaysLater);
   const [departureCity, setDepartureCity] = useState("");
   const [arrivalCity, setArrivalCity] = useState("");
   const [adults, setAdults] = useState(0);
@@ -27,6 +31,8 @@ export default function StateContext({ children }:ContextProps) {
       <MyContext.Provider value={{
         startDate,
         setStartDate,
+        endDate,
+        setEndDate,
         departureCity,
         setDepartureCity,
         arrivalCity,

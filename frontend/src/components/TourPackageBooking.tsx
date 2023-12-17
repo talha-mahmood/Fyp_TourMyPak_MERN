@@ -4,32 +4,32 @@ import BookingWidget from "./BookingWidget";
 import PlaceGallery from "./PlaceGallery";
 import AddressLink from "./AddressLink";
 import { Context } from "./StateContext";
-export default function HotelsBooking() {
+export default function TourPackageBooking() {
   // const {id} = useParams();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [place,setPlace] = useState('place');
   const {startDate}:any = Context()
   const {endDate}:any = Context()
-
+const photo='/public/skardu.jpg'
 
   return (
     <div className="mt-4 bg-gray-100  px-8 pt-8 justify-center ">
       <h1 className="text-3xl">
         {/* {place.title} */}
         
-        Stay at this spacious House in Pirchinasi
+        2 Days Weekend Skardu Trip
         </h1>
       <AddressLink>
         {/* {place.address} */}
         address
         </AddressLink>
-      <PlaceGallery place={place} />
+      <PlaceGallery photo={photo} />
       <div className="mt-8 mb-8 grid gap-8 grid-cols-1 md:grid-cols-[2fr_1fr]">
         <div>
           <div className="my-4">
             <h2 className="font-semibold text-2xl ">Description</h2>
             {/* {place.description} */}
-            TourMyPak as promised comes to explore the beautiful Makran Coastal Belt every weekend with a trip to 𝐎𝐫𝐦𝐚𝐫𝐚 𝐁𝐞𝐚𝐜𝐡 with sights including the beautiful Kund Malir Beach, Princess of Hope, and Buzzi Pass.
+            TourMyPak as promised comes to explore the beautiful north Belt every weekend with a trip to Skardu with sights including the beautiful Princess of Hope, and Buzzi Pass.
 Join us for an adventurous night out camping by the beach shores and make lifelong memories
 💸 𝐏𝐑𝐈𝐂𝐄 𝐎𝐅 𝐓𝐑𝐈𝐏:
 𝐑𝐬.𝟏𝟎,𝟓𝟎𝟎/-Per Person
@@ -42,21 +42,22 @@ Join us for an adventurous night out camping by the beach shores and make lifelo
 50% payment is to be made at the time of bookings & remaining 50% clear a day before departure for the trip.
 -----------
           </div>
-          Check-in: 
+          <div className="font-bold">
+          Departure: 
           {/* {place.checkIn} */}
           {startDate ? `${startDate.toLocaleDateString()} ` : ``}
           <br />
-          Check-out: 
+          Arrival: 
           {endDate ? `${endDate.toLocaleDateString()} ` : ``}
           {/* {place.checkOut} */}
          
           <br />
           Max number of persons:
           4       {/* {place.maxGuests} */}
-       
+          </div>
         </div>
         <div>
-          <BookingWidget place={place} />
+          <BookingWidget  />
         </div>
       </div>
       <div className="bg-white -mx-8 px-8 py-8 border-t">

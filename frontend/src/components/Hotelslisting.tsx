@@ -11,7 +11,7 @@ function SearchPage() {
 
 const navigate=useNavigate()
   const handleClick=()=>{
-    navigate(`/place`);
+    navigate(`/hotelsbooking`);
   }
   const handleClickRecommended=() => {
     setRecommended(true)
@@ -38,7 +38,7 @@ const navigate=useNavigate()
         <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${lowPrice? 'bg-primarycolor' : 'bg-secondarycolor'}`}onClick={handleClickLowPrice}>Low Price</button>
 
       </div>
-   <button onClick={handleClick}>
+   <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -48,9 +48,9 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
+</div>
 
-          <button onClick={handleClick}>
+          <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -60,8 +60,8 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
-          <button onClick={handleClick}>
+</div>
+          <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -71,8 +71,8 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
-          <button onClick={handleClick}>
+</div>
+          <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -82,8 +82,8 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
-          <button onClick={handleClick}>
+</div>
+          <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -93,8 +93,8 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
-          <button onClick={handleClick}>
+</div>
+          <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -104,8 +104,8 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
-          <button onClick={handleClick}>
+</div>
+          <div onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -115,7 +115,7 @@ const navigate=useNavigate()
         price="PKR9000 / night"
         total=""
       />
-   </button>
+</div>
      
      
      
