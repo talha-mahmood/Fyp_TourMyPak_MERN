@@ -23,7 +23,7 @@ var mappedflights:any;
 
 
 
-const airportCities = [
+const cities = [
   { value: "Pirchinasi ", code: "PRC", airport: "MainCity " },
   {
     value: "Skardu",
@@ -55,17 +55,6 @@ const [isParamData, setIsParamData]= useState('false')
   const [selectedArrivalCity, setSelectedArrivalCity] = useState('');
 
   const [addFlightClickCount, setAddFlightClickCount] = useState(0);
-
-//   if(data){
- 
-//     mappedflights=JSON.parse(data?.flights)
-  
-//  }
-//  else{
-//   mappedflights=flights
-
-//  }
-
   const [selected, setSelected] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -73,7 +62,7 @@ const [isParamData, setIsParamData]= useState('false')
   const [datePickerOpen, setDatePickerOpen] = useState(false);
   
   const navigate = useNavigate();
-  const navigateToFlightListing = () => {
+  const navigateto = () => {
     if(flights.departureCity==''|| flights.arrivalCity==''||travelers==0){
       alert("fill in all fields")
       return
@@ -189,33 +178,6 @@ const [isParamData, setIsParamData]= useState('false')
 
   };
 
-  
-  // const handleSelect = (item:any, index:number) => {
-  //   const selectedDate = item;
-
-  //   const updatedFlights = [...flights];
-  //   updatedFlights[index] = {
-  //     ...updatedFlights[index],
-  //     startDate: selectedDate,
-  //     minDate: selectedDate
-  //   };
-
-  //   // Update minDate for the next flight
-  //   if (index < updatedFlights.length -1) {
-  //     updatedFlights[index + 1] = {
-  //       ...updatedFlights[index + 1],
-  //       minDate: selectedDate
-  //     };
-  //   }
-
-  //   setFlights(updatedFlights);
-  // };
-
-
- 
- 
-
- 
 
   const handleAddFlight = (index:number) => {
    
@@ -239,46 +201,15 @@ const [isParamData, setIsParamData]= useState('false')
     setFlights(updatedFlights);
   };
 
-
- 
-
-
- 
-
-
-  // const handlestartDateChange = (date:any, index:number) => {
-  //   const updatedFlights = flights.map((flight:any) => {
-  //     if (flight?.id === index) {
-  //       console.log("...flight, startDate:value",{...flight, startDate:date})
-  //       return {...flight, startDate:date};
-       
-  //     }
-  //     return flight;
-      
-  //   });
-  //   setFlights(updatedFlights);
-  // };
-
   const options = [
     { value: 'Burns Bay Road' },
     { value: 'Downing Street' },
     { value: 'Wall Street' },
   ];
 
-  // const formatDate = (date:any,index:number) => {
-  //   const options:any = { day: "numeric", month: "long" };
-  //   // flights[index].startDate = new Intl.DateTimeFormat("en-US", options).format(date);
-  //   // console.log("flights[index].startDate", flights[index].startDate)
-  //   return new Intl.DateTimeFormat("en-US", options).format(date);
-  // };
-
-
   // travelers
 
-  
 const [open, setOpen] = useState(false);
-
-
 const {adults, setAdults}:any= Context()
 const {child, setChild}:any = Context()
 const {infant, setInfant}:any = Context()
@@ -419,13 +350,7 @@ try{
    })
    console.log("mappedflights3",mappedflights3)
   setDateInString(true)
-       // Create a copy of the flights array without causing a re-render
-      //  const updatedFlightsData = [...flights];
-       
-       // Update the local copy of flights
-      //  updatedFlightsData.splice(0, updatedFlightsData.length, ...mappedflights2);
-      //  console.log("updated flights are",updatedFlightsData[0].departureCity )
-       // Set the state variable with the updated flights
+      
        setFlights(mappedflights3);
 
   }
@@ -435,61 +360,10 @@ try{
 
   }
 }
-  // setAddFlightClickCount(mappedflights.length)
-
-  // const mappedFlights2 = parsedFlights.map((flight:any, index:any) => {
-
-  //   if(index>1){
-    
-  //     setFlights([...flights,  { id: index, departureCity: '', arrivalCity: '', startDate: today  , isDatePickerOpen: false, minDate: today  },]);
-      
-  //   }
-  //  const flights2=flights[index]
-  //  if(flights2){
-  //   flights2.departureCity=flight.departureCity
-  //   flights2.arrivalCity=flight.arrivalCity
-  //   flights2.startDate=flight.startDate
-    
-  //  }
-  
-  //  return flights2
-   
-  // });
-
-  
-
-  
-  // setFlights(mappedFlights2);
 
 
-async function fetchData() {
-  try {
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    const data = await response.json();
-   console.log('countries data is', data[0].name.common)
-
-   setAirportData(data)
-   console.log("setAirportData",data)
-   if(data){
-    const searchdata= data.map((city:any) => 
-    city?.name.common
-  )
-  console.log("search data after mapping",searchdata)
-   }
- 
-  } catch (error) {
-    console.error('Error fetching country data:', error);
-  }
-}
-fetchData();
 
 }, [isParamData]);
-
-
-  // Debounce the input changes with a delay of 300 milliseconds
- 
-  // const debouncedDepartureCityChange = debounce(handleDepartureCityChange, 300);
-  // const debouncedArrivalCityChange = debounce(handleArrivalCityChange, 300);
 
 console.log("flights", flights)
   return (
@@ -535,7 +409,7 @@ console.log("flights", flights)
                  key={isParamData}
             defaultValue={ flight.departureCity}
           className='min-w-[300px] mb-2'
-            options={airportCities.map((city) => ({
+            options={cities.map((city) => ({
               value: `${city.value} (${city.code}) `,
               code: city.code,
               label: (
@@ -587,7 +461,7 @@ console.log("flights", flights)
           key={isParamData}
                defaultValue={  flight.arrivalCity}
              className='min-w-[300px]  mb-2'
-            options={airportCities.map((city) => ({
+            options={cities.map((city) => ({
               value: `${city.value} (${city.code})`,
               code: city.code,
               label: (
@@ -709,18 +583,6 @@ console.log("flights", flights)
           </div>
         ))}
 
-        {/* <div className="flex">
-        {addFlightClickCount < 3 && (
-          <button
-            type="submit"
-            className="text-teal-700 px-1 py-1 mb-1 rounded-md text-lg font-medium hover: hover:scale-105 duration-300"
-            onClick={()=>{handleAddFlight(addFlightClickCount + 2)}}
-
-          >
-            + Add flight
-          </button>
-        )}
-        </div> */}
 
         <div className="flex">
         {flights.length < 5 && (
@@ -741,7 +603,7 @@ console.log("flights", flights)
         </div>
         <div className="flex justify-center ">
   
-        <button type="submit"className=' mt-2 bg-secondarycolor text-white px-7 py-4 rounded-md shadow-lg text-lg font-medium hover:shadow-lg hover:scale-105 duration-300 w-40' onClick={navigateToFlightListing} >Book now</button>
+        <button type="submit"className=' mt-2 bg-secondarycolor text-white px-7 py-4 rounded-md shadow-lg text-lg font-medium hover:shadow-lg hover:scale-105 duration-300 w-40' onClick={navigateto} >Book now</button>
 
     
 </div>

@@ -5,7 +5,7 @@ import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space,Button } from 'antd';
 import { Context } from './StateContext';
-const Mytest: FC<{data?:any }> = ({data}) => {
+const PersonsDropdown: FC<{data?:any }> = ({data}) => {
     console.log("data in test",data)
     const [open, setOpen] = useState(false);
 
@@ -165,4 +165,4 @@ const Mytest: FC<{data?:any }> = ({data}) => {
     );
 };
 
-export default Mytest;
+export default PersonsDropdown;

@@ -2,41 +2,37 @@
 
 import React, { FC, useState } from 'react';
 // import { Box, Typography } from '@mui/material';
-import Flights from './Flights';
+import Travel from './Travel';
 import Hotels from './Hotels';
 import Cars from './Cars';
 
 
 const TravelForm :FC<{data?:any}>= ({data}) => {
   // dashboard state management
-  const [showFlights, setShowFlights] = useState(true);
+  const [tourPackage, setShowTourPackage] = useState(true);
   const [showHotels, setShowHotels] = useState(false);
   const [showCars, setShowCars] = useState(false);
   
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const[listingpath, setListingpath] = useState('');
+ 
 
 
 
-  const handleClickFlights = () => {
-    setListingpath('/flightslisting')
-    setShowFlights(true);
+  const handleClickTourPackage = () => {
+    setShowTourPackage(true);
     setShowHotels(false);
     setShowCars(false);
  
   };
 
   const handleClickHotels = () => {
-    setListingpath('/hotelslisting')
-    setShowFlights(false);
+    setShowTourPackage(false);
     setShowHotels(true);
     setShowCars(false);
   
   };
 
   const handleClickCars = () => {
-    setListingpath('/carslisting')
-    setShowFlights(false);
+    setShowTourPackage(false);
     setShowHotels(false);
     setShowCars(true);
 
@@ -62,9 +58,9 @@ const TravelForm :FC<{data?:any}>= ({data}) => {
       
       <button
   className={`  mr-5 font-bold text-[19px] flex  ${
-    showFlights ? 'text-primarycolor ' : 'text-white'
+    tourPackage ? 'text-primarycolor ' : 'text-white'
   } hover:text-primarycolor `}
-  onClick={handleClickFlights}
+  onClick={handleClickTourPackage}
 >
   {/* <FlightTakeoff /> */}
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-luggage mt-1 "><path d="M6 20h0a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h0"/><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"/><path d="M10 20h4"/><circle cx="16" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></svg>
@@ -96,20 +92,12 @@ const TravelForm :FC<{data?:any}>= ({data}) => {
       <div className="border border-solid border-gray-300 h-0"></div>
   <div>
   
-      {showFlights && <Flights data={data} />}
+      {tourPackage && <Travel data={data} />}
       {showHotels && <Hotels />}
       {showCars && <Cars />}
      
-      {
-        
-      }
-      {/* <div className="flex justify-center ">
-  
-        <Link href='/flightslisting'>
-        <button type="submit"className='bg-teal-700 text-white px-7 py-4 rounded-md shadow-lg text-lg font-medium hover:shadow-lg hover:scale-105 duration-300 w-40' >Book now</button>
-        </Link>
-          
-    </div> */}
+     
+   
   </div>
      
     </div>

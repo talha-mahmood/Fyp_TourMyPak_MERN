@@ -7,7 +7,7 @@ import { Input } from "antd";
 import { DateRange } from "react-date-range";
 
 import { AutoComplete } from "antd";
-import Mytest from "./test";
+import PersonsDropdown from "./PersonsDropdown";
 import { useNavigate } from "react-router-dom";
 import { SearchOutlined } from '@ant-design/icons';
 import { DownOutlined } from '@ant-design/icons';
@@ -17,7 +17,7 @@ import { Context } from "./StateContext";
 const RoundTrip : FC<{data?:any }> = ({data})  => {
   
   console.log("roundtrip data", data)
-  const airportCities = [
+  const cities = [
     { value: "Pirchinasi ", code: "PRC", airport: "MainCity " },
     {
       value: "Skardu",
@@ -268,26 +268,8 @@ useEffect(() => {
   // setTravelers(parseInt(data.travelers));
 }
 
-async function fetchData() {
-  try {
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    const data = await response.json();
-   console.log('countries data is', data[0].name.common)
 
-   setAirportData(data)
-   console.log("setAirportData",data)
-   if(data){
-    const searchdata= data.map((city:any) => 
-    city?.name.common
-  )
-  console.log("search data after mapping",searchdata)
-   }
- 
-  } catch (error) {
-    console.error('Error fetching country data:', error);
-  }
-}
-fetchData();
+
 
 }, [data]);
 }
@@ -314,16 +296,16 @@ fetchData();
                 </Space>
             </a>
         </Dropdown> */}
-        <Mytest data={data} />
+        <PersonsDropdown data={data} />
         
       </div>
       <div className="flex flex-row custom-screen  mr-3 md:space-x-2  w-full ">
         <div className="max-h-[50px] min-w-[60px] ">
           <AutoComplete
-              //  dataSource={airportCities.map(city => city.value)}
+              //  dataSource={cities.map(city => city.value)}
                defaultValue={departureCity}
              className='min-w-[300px] mb-2 '
-            options={airportCities.map((city) => ({
+            options={cities.map((city) => ({
               value: `${city.value} (${city.code}) `,
               code: city.code,
               label: (
@@ -357,10 +339,10 @@ fetchData();
 
         <div className="max-h-[50px] min-w-[60px] mb-2 ">
           <AutoComplete
-              //  dataSource={airportCities.map(city => city.value)}
+              //  dataSource={cities.map(city => city.value)}
                defaultValue={arrivalCity}
              className='min-w-[300px] '
-            options={airportCities.map((city) => ({
+            options={cities.map((city) => ({
               value: `${city.value} (${city.code})`,
               code: city.code,
               label: (

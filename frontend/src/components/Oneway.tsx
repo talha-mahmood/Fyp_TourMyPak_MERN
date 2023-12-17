@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState, useRef, FC } from "react";
-import Mytest from "./test";
 import { Input } from "antd";
 
 import { DateRange, Calendar } from "react-date-range";
@@ -11,11 +10,11 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { AutoComplete } from "antd";
 import { useNavigate  } from 'react-router-dom';
 import { Context } from "./StateContext";
-// import AirportData from '@/app/airportdata'
+import PersonsDropdown from "./PersonsDropdown";
 
 const Oneway: FC<{ data?: any }> = ({ data }) => {
   console.log("oneway data", data);
-  const airportCities = [
+  const cities = [
     { value: "Pirchinasi ", code: "PRC", airport: "MainCity " },
     {
       value: "Skardu",
@@ -46,7 +45,7 @@ const Oneway: FC<{ data?: any }> = ({ data }) => {
   const navigate = useNavigate(); // Get the router object
 
   // Function to navigate to flight listing page with data
-  const navigateToFlightListing = () => {
+  const navigateto = () => {
     if (departureCity == "" || arrivalCity == ""|| travelers==0) {
       alert("fill in all fields");
       return;
@@ -129,7 +128,7 @@ const Oneway: FC<{ data?: any }> = ({ data }) => {
       <div className="relative p-1">
         {/* <MyDropdown/> */}
 
-        <Mytest data={data} />
+        <PersonsDropdown data={data} />
       </div>
       <div className="flex flex-row custom-screen  mr-3 md:space-x-2  w-full ">
         <div className="max-h-[200px] min-w-[60px] mb-2 ">
@@ -138,7 +137,7 @@ const Oneway: FC<{ data?: any }> = ({ data }) => {
             style={{ width: 300 }}
             onChange={handleDepartureCityChange}
             className="min-w-[300px] "
-            options={airportCities.map((city: any) => ({
+            options={cities.map((city: any) => ({
               value: `${city.value} (${city.code}) `,
               code: city.code,
               label: (
@@ -181,7 +180,7 @@ const Oneway: FC<{ data?: any }> = ({ data }) => {
           <AutoComplete
             className="min-w-[300px] max-h-[200px] "
             defaultValue={arrivalCity}
-            options={airportCities.map((city) => ({
+            options={cities.map((city) => ({
               value: `${city.value} (${city.code})`,
               code: city.code,
               label: (
@@ -285,7 +284,7 @@ const Oneway: FC<{ data?: any }> = ({ data }) => {
         <button
           type="submit"
           className=" mt-2 bg-secondarycolor text-white px-7 py-4 rounded-md shadow-lg text-lg font-medium hover:shadow-lg hover:scale-105 duration-300 w-40"
-          onClick={navigateToFlightListing}
+          onClick={navigateto}
         >
           Book now
         </button>

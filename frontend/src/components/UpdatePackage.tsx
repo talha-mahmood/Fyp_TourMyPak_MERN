@@ -9,10 +9,16 @@ export default function UpdatePackage() {
   const [category, setCategory] = useState('')
   const [company, setCompany] = useState('')
   const [error, setError] = useState(false)
+
+
 useEffect(()=>{
+  const tokenString=localStorage.getItem('token')
+  const token=tokenString? JSON.parse(tokenString) : null;
+
+
   fetch("http://localhost:4000/package-list/"+id,{
     headers:{
-      authorization:"bearer "+JSON.parse(localStorage.getItem('token'))
+      authorization:"bearer "+token
     }
   }).then((resp) => {
     resp.json().then((result) => {
@@ -28,6 +34,9 @@ useEffect(()=>{
 },[])
 
   function add() {
+    const tokenString=localStorage.getItem('token')
+    const token=tokenString? JSON.parse(tokenString) : null;
+  
     if (!name || !price || !category || !company) {
       setError(true);
       return false;
@@ -36,12 +45,11 @@ useEffect(()=>{
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        authorization:"bearer "+JSON.parse(localStorage.getItem('token'))
-
+        authorization:"bearer "+ token
       },
       body: JSON.stringify({name,price,category,company}),
     }).then((result) =>
-      result.json().then((resp) =>{
+      result.json().then(() =>{
        alert('Restaurant Successfully updated');
       navigate('/package-list')
       })
