@@ -23,6 +23,8 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import AddPlaces from "./components/AddPlaces";
 import Register from "./components/Register";
 
+import HotelsBooking from "./components/HotelsBooking";
+
 function App() {
   return (
     <Router>
@@ -99,6 +101,21 @@ function App() {
 
             path="/register"
             element={<Register />}
+          ></Route>
+          <Route
+
+            path="/hotelsbooking"
+            element={<HotelsBooking />}
+          ></Route>
+          <Route
+
+            path="/hotelsbooking"
+            element={<HotelsBooking />}
+          ></Route>
+          <Route
+
+            path="/hotelsbooking"
+            element={<HotelsBooking />}
           ></Route>
         
         </Routes>

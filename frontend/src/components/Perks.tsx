@@ -1,10 +1,10 @@
-export default function Perks({selected,onChange}) {
-    function handleCbClick(ev) {
+export default function Perks({selected,onChange}:any) {
+    function handleCbClick(ev:any) {
       const {checked,name} = ev.target;
       if (checked) {
         onChange([...selected,name]);
       } else {
-        onChange([...selected.filter(selectedName => selectedName !== name)]);
+        onChange([...selected.filter((selectedName:any) => selectedName !== name)]);
       }
     }
     return (

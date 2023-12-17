@@ -2,12 +2,17 @@
 import React, { useState } from "react";
 import "./SearchPage.css";
 import SearchResult from "./SearchResult";
+import { useNavigate } from "react-router-dom";
 
 function SearchPage() {
   const[recommended, setRecommended]=useState<boolean>(true)
   const[highRated, setHighRated]=useState<boolean>(false)
   const[lowPrice, setLowPrice]=useState<boolean>(false)
 
+const navigate=useNavigate()
+  const handleClick=()=>{
+    navigate(`/place`);
+  }
   const handleClickRecommended=() => {
     setRecommended(true)
     setHighRated(false)
@@ -33,6 +38,7 @@ function SearchPage() {
         <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${lowPrice? 'bg-primarycolor' : 'bg-secondarycolor'}`}onClick={handleClickLowPrice}>Low Price</button>
 
       </div>
+   <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -42,6 +48,9 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
+
+          <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -51,6 +60,8 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
+          <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -60,6 +71,8 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
+          <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -69,6 +82,8 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
+          <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -78,6 +93,8 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
+          <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -87,6 +104,8 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
+          <button onClick={handleClick}>
       <SearchResult
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
         location="Private room "
@@ -96,6 +115,7 @@ function SearchPage() {
         price="PKR9000 / night"
         total=""
       />
+   </button>
      
      
      
