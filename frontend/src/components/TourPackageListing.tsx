@@ -4,7 +4,7 @@ import "./SearchPage.css";
 import SearchResult from "./SearchResult";
 import skardu from '/skardu.jpg'
 import {useNavigate} from'react-router-dom'
-function SearchPage() {
+function TourPackageListing() {
   const[recommended, setRecommended]=useState<boolean>(true)
   const[highRated, setHighRated]=useState<boolean>(false)
   const[lowPrice, setLowPrice]=useState<boolean>(false)
@@ -34,9 +34,9 @@ function SearchPage() {
       <div className="searchPage__info">
    
 
-        <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${recommended? 'bg-primarycolor' : 'bg-secondarycolor'}`} onClick={handleClickRecommended} >Recommended</button>
-        <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${highRated? 'bg-primarycolor' : 'bg-secondarycolor'}`} onClick={handleClickHighRated}>High rated</button>
-        <button className={`border rounded-xl p-2  text-white hover:bg-primarycolor ${lowPrice? 'bg-primarycolor' : 'bg-secondarycolor'}`}onClick={handleClickLowPrice}>Low Price</button>
+        <button className={`border rounded-xl p-2  text-sm text-white hover:bg-primarycolor ${recommended? 'bg-primarycolor' : 'bg-secondarycolor'}`} onClick={handleClickRecommended} >Recommended</button>
+        <button className={`border rounded-xl p-2  text-sm text-white hover:bg-primarycolor ${highRated? 'bg-primarycolor' : 'bg-secondarycolor'}`} onClick={handleClickHighRated}>High rated</button>
+        <button className={`border rounded-xl p-2  text-sm text-white hover:bg-primarycolor ${lowPrice? 'bg-primarycolor' : 'bg-secondarycolor'}`}onClick={handleClickLowPrice}>Low Price</button>
 
       </div>
       <div onClick={handleClick}>
@@ -51,7 +51,7 @@ function SearchPage() {
       />
      
       </div>
-     <div onClick={handleClick}>
+       <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -63,7 +63,7 @@ function SearchPage() {
       />
      
       </div>
-     <div onClick={handleClick}>
+       <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -75,7 +75,7 @@ function SearchPage() {
       />
      
       </div>
-     <div onClick={handleClick}>
+       <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -87,7 +87,7 @@ function SearchPage() {
       />
      
       </div>
-     <div onClick={handleClick}>
+       <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -99,7 +99,7 @@ function SearchPage() {
       />
      
       </div>
-     <div onClick={handleClick}>
+       <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -111,7 +111,7 @@ function SearchPage() {
       />
      
       </div>
-     <div onClick={handleClick}>
+       <div onClick={handleClick}>
       <SearchResult
         img={skardu}
         location="Islamabad to Skardu"
@@ -128,4 +128,4 @@ function SearchPage() {
   );
 }
 
-export default SearchPage;
+export default TourPackageListing;

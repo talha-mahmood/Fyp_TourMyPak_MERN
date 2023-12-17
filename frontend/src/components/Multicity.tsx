@@ -98,7 +98,7 @@ const [isParamData, setIsParamData]= useState('false')
     const queryString = new URLSearchParams({ flights: JSON.stringify(searchData) }).toString();
   
     // Navigate to the flight listing page along with the query string
-    navigate(`/flightslisting?${queryString}`);
+    navigate(`/tourpackagelisting?${queryString}`);
   };
 
 

@@ -8,7 +8,6 @@ import StateContext from './components/StateContext'
 import { ConfigProvider } from 'antd';
 import theme from './theme/themeConfig';
 import Home from './components/Home'
-import Flightslisting from "./components/Flightslisting";
 import Header from "./components/layout/Header";
 import MyFooter from "./components/MyFooter";
 import Hotelslisting from "./components/Hotelslisting";
@@ -26,6 +25,7 @@ import Register from "./components/Register";
 import HotelsBooking from "./components/HotelsBooking";
 import TourPackageBooking from "./components/TourPackageBooking";
 import CarsBooking from "./components/CarsBooking";
+import TourPackageListing from "./components/TourPackageListing";
 
 function App() {
   return (
@@ -43,8 +43,8 @@ function App() {
           ></Route>
           <Route
 
-            path="/flightslisting"
-            element={<ProtectedRoutes><Flightslisting /></ProtectedRoutes>}
+            path="/tourpackagelisting"
+            element={<ProtectedRoutes><TourPackageListing /></ProtectedRoutes>}
           ></Route>
           <Route
 

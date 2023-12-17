@@ -9,10 +9,10 @@ const MyFooter = () => {
   return (
     <div className="bg-secondarycolor w-fit md:w-full ">
     <div className="mt-[240px] md:mx-[70px]">
-      <div className=" relative rounded-[20px] bg-primarycolor  min-w-[400px] -top-[160px]   ">
+      <div className=" relative rounded-[20px] bg-primarycolor  min-w-[350px] -top-[160px] mx-2 md:mx-0   ">
         <div className="md:ml-[24px] flex flex-row justify-between">
           <div>
-            <p className="relative w-[364px] text-[44px] leading-[54px] font-bold top-5 text-white  ">
+            <p className="relative w-[100px] md:w-[364px]  text-[44px] leading-[54px] font-bold top-5 text-white  ">
               Subscribe Newsletter
             </p>
             <p className="mt-[24px] text-[20px] font-bold  text-white">
@@ -27,10 +27,10 @@ const MyFooter = () => {
               <div className="max-w-[450px] mb-4">
                 <input
                   placeholder="Your Email Address"
-                  className="h-[50px]  min-w-[250px]  mr-3 rounded-md "
+                  className="h-[50px]  md:min-w-[250px] min-w-fit  mr-3 rounded-md "
                 />
               </div>
-              <button className="mb-4 text-[color:var(--neutrals,#FFF)] text-sm font-semibold bg-[#112211] z-10 py-[16px] px-[20px] rounded-[4px]">
+              <button className="mb-4 text-[color:var(--neutrals,#FFF)] text-sm font-semibold bg-[#112211] z-10 py-[12px] px-[16px] md:py-[16px] md:px-[20px] rounded-[4px]">
                 Subscribe
               </button>
             </div>

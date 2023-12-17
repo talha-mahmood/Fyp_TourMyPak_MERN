@@ -71,7 +71,7 @@ const Oneway: FC<{ data?: any }> = ({ data }) => {
     const queryString = new URLSearchParams(searchData).toString();
 
     // Navigate to the flight listing page along with the query string
-    navigate(`/flightslisting?${queryString}`);
+    navigate(`/tourpackagelisting?${queryString}`);
   };
 
   const handleDepartureCityChange = (value: string) => {

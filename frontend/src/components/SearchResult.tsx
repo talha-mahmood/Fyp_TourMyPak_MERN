@@ -24,16 +24,16 @@ function SearchResult({
           <p>____</p>
           <p className="font-bold">{description}</p>
         </div>
-        <div className="searchResult__infoBottom">
+        <div className="c">
           <div className="searchResult__stars">
             {/* <StarIcon className="searchResult__star" /> */}
-            <p>
+            <p className="my-3">
               <strong>{star}</strong>
             </p>
           </div>
-          <div className="searchResult__price">
-            <h2 className="font-bold">{price}</h2>
-            <p>{total}</p>
+          <div className=" ">
+            <h2 className="font-bold ">{price}</h2>
+            <p className="">{total}</p>
           </div>
         </div>
       </div>

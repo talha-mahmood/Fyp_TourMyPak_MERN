@@ -59,15 +59,16 @@ const Header = () => {
               <Link to='/image-upload'className='mt-1' >
                 Image Upload
               </Link> */}
-              <Link to="/signup"className='mt-1 flex' onClick={() => logout()}>
-            
-
-               <span> Logout  </span></Link>
-               <Link to='/' className='flex'>
+               <Link to='/' className='flex gap-1'>
                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6b3729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx="12" cy="10" r="4" /><circle cx="12" cy="12" r="10" /></svg>
 
                <span className='mt-1'>  {"( " +user ? user.name : '' + " )"} </span>
                </Link>
+              <Link to="/signup"className='mt-1 flex' onClick={() => logout()}>
+            
+
+               <span> Logout  </span></Link>
+              
             </> : <><Link to='/login'className='mt-1 ' >
 
             <span className='mt-1'> Login</span>

@@ -62,9 +62,9 @@
   right: 30px;
 }
 
-.searchResult__price > p {
+/* .searchResult__price > p {
   text-align: right;
-}
+} */
 
 .searchResult__star {
   color: red;
