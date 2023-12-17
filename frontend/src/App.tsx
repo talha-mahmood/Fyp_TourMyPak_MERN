@@ -26,6 +26,8 @@ import HotelsBooking from "./components/HotelsBooking";
 import TourPackageBooking from "./components/TourPackageBooking";
 import CarsBooking from "./components/CarsBooking";
 import TourPackageListing from "./components/TourPackageListing";
+import TravelGuideBooking from "./components/TravelGuideBooking";
+import TravelGuideListing from "./components/TravelGuideListing";
 
 function App() {
   return (
@@ -55,6 +57,11 @@ function App() {
 
             path="/carslisting"
             element={<ProtectedRoutes><Carslisting /></ProtectedRoutes>}
+          ></Route>
+          <Route
+
+            path="/travelguidelisting"
+            element={<ProtectedRoutes><TravelGuideListing /></ProtectedRoutes>}
           ></Route>
 
 
@@ -118,6 +125,11 @@ function App() {
 
             path="/carsbooking"
             element={<CarsBooking />}
+          ></Route>
+          <Route
+
+            path="/travelguidebooking"
+            element={<TravelGuideBooking />}
           ></Route>
         
         </Routes>
